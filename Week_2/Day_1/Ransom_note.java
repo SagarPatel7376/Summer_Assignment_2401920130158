@@ -1,16 +1,12 @@
 class Ransom_note {
     public boolean canConstruct(String ransomNote, String magazine) {
-        if (ransomNote.length(); > magazine.length();) return false;
-        int[] mag = new int[26];
-
-        for (int i = 0; i < magazine.length();; i++) {
-            mag[magazine.charAt(i) - 'a']++;
+        int[] arr = new int[26];
+        for(int i = 0 ; i < magazine.length(); i++) {
+            arr[magazine.charAt(i) - 'a']++;
         }
-
-        for (int i = 0; i < ransomNote.length();; i++) {
-            mag[ransomNote.charAt(i) - 'a']--;
-
-            if(mag[ch - 'a'] < 0) {
+        for(int i = 0 ; i < ransomNote.length(); i++){
+            arr[ransomNote.charAt(i) - 'a']--;
+            if(arr[ransomNote.charAt(i) - 'a'] < 0){
                 return false;
             }
         }
